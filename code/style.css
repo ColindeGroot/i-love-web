@@ -1,0 +1,42 @@
+html{
+    font-size: 62,5%;
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color:#fff;
+}
+
+h1{
+    font-size: 4rem;
+    color: #1d1d1b;
+
+}
+
+.intro{
+    height:100vh ;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgb(117,236,69);
+    background: linear-gradient(135deg, #42FCDB 0%, #3EE577 100%);
+}
+
+.slide-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+article{
+    padding: 2rem;
+    width:  20%;
+    height: 30rem;
+    border: 0.1rem solid black;
+}
