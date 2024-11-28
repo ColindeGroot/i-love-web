@@ -72,19 +72,16 @@ main{
     flex-flow: row wrap;
     justify-content: center;
     align-items: start;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .noteofday{
     display: flex;
     flex-flow: column;
-    background-color: #eeeeee;
-    width: 30%;
-    padding: 1rem 2rem;
-    border-radius: 9px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    width: 80%;
+    padding-left: 2rem;
 }
 
 
-.specialfont{
-    font-family: 'epischfont', sans-serif;
-}

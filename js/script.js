@@ -1,29 +1,25 @@
-// Functie om een notitie te maken
-function createNoteOfDay(date, title, contentBlocks) {
+function createNoteOfDay(date, title, contentBlocks) { //aanmaken van een notitie functie
     const article = document.createElement('article');
     article.className = 'noteofday'; // Voeg article class toe
 
-    // Datum toevoegen
-    const h2 = document.createElement('h2');
+    const h2 = document.createElement('h2'); //h2 voor datum 
     h2.textContent = date;
-
-    // Titel toevoegen
-    const h3 = document.createElement('h3');
+  
+    const h3 = document.createElement('h3'); //h3 voor titels van de blog
     h3.textContent = title;
 
-    article.appendChild(h2); // Voeg datum toe aan het artikel
-    article.appendChild(h3); // Voeg titel toe aan het artikel
+    article.appendChild(h2); 
+    article.appendChild(h3); 
 
-    // Verwerk contentBlocks
-    contentBlocks.forEach(block => {
-        // Paragraaf toevoegen
-        const p = document.createElement('p');
+    contentBlocks.forEach(block => { //content blocks toegevoegd zodat de onderstaande items meerder keren gebruikt kunnen worden
+ 
+        const p = document.createElement('p'); // paragraaf toevoegen
         p.className = 'paragraph';
         p.textContent = block.content;
         article.appendChild(p); // Voeg paragraaf toe aan het artikel
 
-        // Lijst toevoegen als er lijstitems zijn
-        if (block.listItems && block.listItems.length > 0) {
+     
+        if (block.listItems && block.listItems.length > 0) {  
             const h4 = document.createElement('h4');
             h4.textContent = block.listTitle;
             article.appendChild(h4); // Voeg lijsttitel toe
@@ -229,6 +225,32 @@ const notes = [  // Notities data
                 content: 'Ik ga thuis verder aan de createLog functie van mijn I Love Web project om HTML-code te besparen.'
             }
         ]
+    },
+    {
+        date: '22-11-2024',
+        title: 'Vandaag gedaan',
+        contentBlocks: [
+            {
+                content:'test',
+                listTitle: '3 dingen die ik heb geleerd over HTML',
+                listItems: [
+                    'item1',
+                    'item2',
+                    'item3'
+                ]
+            },
+            {
+                listTitle: '3 dingen die ik heb geleerd over CSS',
+                listItems: [
+                    'item1 <a href=https://www.google.com>Google</a>',
+                    "This is a link to <a href='https://www.google.com'>Google</a>",
+                    'item3'
+                ]
+            }
+        ] 
+    },
+    {
+        
     }
 ];
 
