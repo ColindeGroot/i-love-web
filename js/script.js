@@ -234,7 +234,7 @@ const notes = [  // Notities data
                 content:'test',
                 listTitle: '3 dingen die ik heb geleerd over HTML',
                 listItems: [
-                    'item1',
+                    'input forms correct gebruiken',
                     'item2',
                     'item3'
                 ]
@@ -250,8 +250,39 @@ const notes = [  // Notities data
         ] 
     },
     {
-        
+        date: '2-12-2024',
+        title: 'Vandaag gedaan',
+        contentBlocks: [
+            {
+                content:'Vandaag heb ik op DLO mijn reflecite punten ingeleverd. Omdat de de hele dag een reflectie was is er verder niet veel gebouwd of ontworpen. Wel zijn er issues gemaakt en aangewezen'
+            }
+        ]
+    },
+    {
+        date: '4-12-2024',
+        title: 'Vandaag gedaan',
+        contentBlocks: [
+            {
+                content:'Vandaag heb ik gewerkt aan de workshop user interface design. Hier heb ik een wireflow en breakdown schets gemaakt voor een nieuwe functie die met js gebouwd gaat worden. Daarnaast heb ik js lessen gevolgd van learnprogramming.online (ik ben nu bij chapter 3)',
+            }
+        ]
+    },
+    {
+        date: '9-12-2024',
+        title: 'Vandaag gedaan',
+        contentBlocks: [
+            {
+                content: 'vandaag heb ik gewerkt aan de ui event deeltaak. Hierin heb ik heb ik met verscxhillende events buttons interactief gemaakt',
+            },
+            {
+                    content: 'Van de 10 expirimenten heb ik er 5 kunnen maken. De reden hiervoor is omdat ik erg veel tijd heb gestoken in een counter functie die gelukkig geslaagd is',
+            }, 
+            {
+                       content: 'Deze opdracht past goed bij het gedragscriterium lerend vermogen want ik maak aangeboden en zelf gevonden materie eigen en gebruikt dit bij de leertaak.'
+            }
+        ]
     }
+
 ];
 
 

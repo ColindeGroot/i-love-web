@@ -78,10 +78,10 @@ main{
 .noteofday{
     display: flex;
     flex-flow: column;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    width: 80%;
-    padding-left: 2rem;
+    background-color: #eee;
+    border-radius: 0.6em;
+    width: 25%;
+    padding: 2rem;
 }
 
 
