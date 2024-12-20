@@ -15,7 +15,7 @@ function createNoteOfDay(date, title, contentBlocks) { //aanmaken van een notiti
  
         const p = document.createElement('p'); // paragraaf toevoegen
         p.className = 'paragraph';
-        p.textContent = block.content;
+        p.innerHTML = block.content;
         article.appendChild(p); // Voeg paragraaf toe aan het artikel
 
      
@@ -27,7 +27,7 @@ function createNoteOfDay(date, title, contentBlocks) { //aanmaken van een notiti
             const ul = document.createElement('ul');
             block.listItems.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = item;
+                li.innerHTML = item;
                 ul.appendChild(li); // Voeg lijstitem toe aan lijst
             });
             article.appendChild(ul); // Voeg de lijst toe aan het artikel
@@ -264,24 +264,29 @@ const notes = [  // Notities data
         contentBlocks: [
             {
                 content:'Vandaag heb ik gewerkt aan de workshop user interface design. Hier heb ik een wireflow en breakdown schets gemaakt voor een nieuwe functie die met js gebouwd gaat worden. Daarnaast heb ik js lessen gevolgd van learnprogramming.online (ik ben nu bij chapter 3)',
+            },
+            {
+                content: "dit is een link naar <a href='https://www.google.com'>Google</a>' "
             }
         ]
     },
     {
         date: '9-12-2024',
-        title: 'Vandaag gedaan',
+        title: 'Vandaag gedaan',  
         contentBlocks: [
             {
                 content: 'vandaag heb ik gewerkt aan de ui event deeltaak. Hierin heb ik heb ik met verscxhillende events buttons interactief gemaakt',
             },
             {
-                    content: 'Van de 10 expirimenten heb ik er 5 kunnen maken. De reden hiervoor is omdat ik erg veel tijd heb gestoken in een counter functie die gelukkig geslaagd is',
+                content: 'Van de 10 expirimenten heb ik er 5 kunnen maken. De reden hiervoor is omdat ik erg veel tijd heb gestoken in een counter functie die gelukkig geslaagd is',
             }, 
             {
-                       content: 'Deze opdracht past goed bij het gedragscriterium lerend vermogen want ik maak aangeboden en zelf gevonden materie eigen en gebruikt dit bij de leertaak.'
-            }
+                content: 'Deze opdracht past goed bij het gedragscriterium lerend vermogen want ik maak aangeboden en zelf gevonden materie eigen en gebruikt dit bij de leertaak.'
+            },
+            
         ]
     }
+
 
 ];
 
@@ -291,3 +296,53 @@ notes.forEach(note => {
     const noteElement = createNoteOfDay(note.date, note.title, note.contentBlocks);
     container.appendChild(noteElement); // Voeg elke notitie toe aan de container
 });
+
+
+
+
+//anchor filter ( ik wil geen innerhtml >:( .)
+// Simulate fetching data
+const data = {
+    date: '4-12-2024',
+    title: 'Vandaag gedaan',
+    contentBlocks: [
+        {
+            content: 'Vandaag heb ik gewerkt aan de workshop user interface design. Hier heb ik een wireflow en breakdown schets gemaakt voor een nieuwe functie die met js gebouwd gaat worden. Daarnaast heb ik js lessen gevolgd van learnprogramming.online (ik ben nu bij chapter 3)',
+        },
+        {
+            content: "dit is een link naar <a href='https://www.google.com'>Google</a>"
+        }
+    ]
+};
+
+// // Function to render content and convert <a> to actual link elements
+// function renderContentBlocks(contentBlocks) {
+//     const container = document.createElement('div'); // Create a container for the content
+
+//     contentBlocks.forEach(block => {
+//         const paragraph = document.createElement('p'); // Create a <p> for each content block
+
+//         // Use a temporary div to parse the HTML
+//         const tempDiv = document.createElement('div');
+//         tempDiv.innerHTML = block.content;
+
+//         // Replace <a> elements with actual links
+//         const anchors = tempDiv.querySelectorAll('a');
+//         anchors.forEach(anchor => {
+//             const link = document.createElement('a');
+//             link.href = anchor.href;
+//             link.textContent = anchor.textContent;
+//             link.target = '_blank'; // Open in a new tab (optional)
+//             anchor.replaceWith(link); // Replace the original <a> element
+//         });
+
+//         // Set the processed HTML as the paragraph's content
+//         paragraph.innerHTML = tempDiv.innerHTML;
+
+//         // Append the paragraph to the container
+//         container.appendChild(paragraph);
+//     });
+
+//     // Append the container to the body (or any other part of the DOM)
+//     document.body.appendChild(container);
+// }

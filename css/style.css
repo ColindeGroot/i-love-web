@@ -3,9 +3,46 @@
     src: url(./assests/epischfont.otf) format("opentype");
 }
 
+@view-transition {
+    navigation: auto;
+}    
+
+/* Create a custom animation */
+@keyframes move-out {
+    from {
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(-1%, 1%);
+        opacity: 0;
+    }
+}
+
+@keyframes move-in {
+    from {
+        transform: translate(1%, 1%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%, 0%);
+        opacity: 1;
+    }
+}
+
+::view-transition-old(*) {
+    animation: 0.2s ease-out both move-out;
+}
+
+::view-transition-new(*) {
+    animation: 0.2s ease-in both move-in;
+}
+
 html {
-    font-size: 62,5%;
-    font-family: 'Poppins', system-ui ;
+    font-size: 62, 5%;
+    font-family: 'Poppins', system-ui;
     font-weight: 400;
     font-style: normal;
 }
@@ -21,14 +58,14 @@ h1 {
     color: #1d1d1b;
 }
 
-.nav-list{
+.nav-list {
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
 }
 
-.nav-item{
+.nav-item {
     padding: 0.5rem;
 }
 
@@ -42,7 +79,7 @@ h1 {
     background: linear-gradient(135deg, #42FCDB 0%, #3EE577 100%);
 }
 
-main{
+main {
     width: 85%;
     margin: auto;
 }
@@ -63,11 +100,9 @@ main{
     margin: 0 0 4rem 0;
 }
 
-
-
 /* semester pagina's */
-
 .layout {
+    margin-top: 5vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -75,7 +110,7 @@ main{
     gap: 3rem;
 }
 
-.noteofday{
+.noteofday {
     display: flex;
     flex-flow: column;
     background-color: #eee;
@@ -83,5 +118,3 @@ main{
     width: 25%;
     padding: 2rem;
 }
-
-
