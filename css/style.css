@@ -84,21 +84,49 @@ main {
     margin: auto;
 }
 
+/* Slide Container */
 .slide-container {
+    width: 100%;
+    overflow-x: auto;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 3em;
+    scroll-behavior:none ;
 }
 
+/* Basis styling voor elk blok */
 .semesters {
+    flex: 0 0 40%; /* Basisbreedte */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #ddd;
     padding: 2rem;
-    width: 20%;
-    height: auto;
-    border: 0.1rem solid black;
-    border-collapse: collapse;
-    margin: 0 0 4rem 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center center; /* Transformeer vanuit het midden */
 }
+
+/* Vergroten van het centrale blok */
+.semesters:nth-child(1):focus-visible,
+.semesters:hover {
+    transform: scale(1.05); /* Vergroten als blok centraal is */
+}
+
+/* Effecten voor omliggende blokken */
+.semesters:not(:focus):not(:hover) {
+    transform: scale(1);
+}
+
+.slide-container::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 4px;
+}
+
 
 /* semester pagina's */
 .layout {

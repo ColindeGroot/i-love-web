@@ -15,7 +15,7 @@ function createNoteOfDay(date, title, contentBlocks) { //aanmaken van een notiti
  
         const p = document.createElement('p'); // paragraaf toevoegen
         p.className = 'paragraph';
-        p.innerHTML = block.content;
+        p.innerHTML = block.content; // voor nu innerhtml zodat linkjes werken
         article.appendChild(p); // Voeg paragraaf toe aan het artikel
 
      
@@ -34,7 +34,7 @@ function createNoteOfDay(date, title, contentBlocks) { //aanmaken van een notiti
         }
     });
 
-    return article;
+    return article; 
 }
 
 // Container ophalen
@@ -106,8 +106,23 @@ const notes = [  // Notities data
                     'Wat is het nut van de I Love web website?'
                 ]
             },
-            {
+            {  
                 content: 'Ik wil nog uitzoeken hoe ik een slider van de semesters maak op mobiel.'
+            }
+        ]
+    },
+    {
+        date: '13-9-2024',
+        title: 'Vandaag gedaan',
+        contentBlocks: [
+            {
+                content: 'Vandaag hebben we de eerste we love web lezing gekregen van Vasilis van Gemert.',
+                listTitle: 'In deze workshop hebben we het gehad over:',
+                listItems: [
+                    'Hoe belangerijk toegankelijk is met een paar voorbeelden',
+                    'Dat websites naast toeganelijk ook leuk moeten zijn',
+                    'En klokken..... Een paas coole projecten van Vasilis waar hij op creatieve wijze de tijd laat zien.'
+                ]
             }
         ]
     },
@@ -228,25 +243,33 @@ const notes = [  // Notities data
     },
     {
         date: '22-11-2024',
-        title: 'Vandaag gedaan',
+        title: 'Forms, inputs en we love web',
         contentBlocks: [
             {
-                content:'test',
+                content:'Vandaag hebben we extra les gekregen over HTML formulieren en inputs',
                 listTitle: '3 dingen die ik heb geleerd over HTML',
                 listItems: [
                     'input forms correct gebruiken',
-                    'item2',
-                    'item3'
+                    'labels aan inputs toevoegen',
+                    'roles in HTML gebruiken'
                 ]
             },
             {
-                listTitle: '3 dingen die ik heb geleerd over CSS',
-                listItems: [
-                    'item1 <a href=https://www.google.com>Google</a>',
-                    "This is a link to <a href='https://www.google.com'>Google</a>",
-                    'item3'
-                ]
+                content:'Vandaag kwam Emiel van Betsbrugge langs. <br/><br/> Emiel is een webGL devloper die werkzaam is bij activetheory die ons heeft vertled wat er alemaal afspeelt bij pitch tot productie. Hij heeft zelf ook eigengemaakte websites laten zien met webGL waarbij hij tips en tricks heeft gegeven.'
             }
+        ] 
+    },
+    {
+        date: '25-11-2024',
+        title: 'Gestalt pricipes',
+        contentBlocks: [
+            {
+                content:'Vandaag hebben we geleerd wat gestalt pricipes zijn ewn hoe je deze kan toepassen op je website'
+            },
+            {
+                content:'Ik heb ervoor gekozen om de <a href="https://github.com/users/ColindeGroot/projects/1?pane=issue&itemId=89110052&issue=ColindeGroot%7Clook-and-feel-corporate-identity%7C4">proximity law</a> te gebruiken op mijn website.'
+            }
+
         ] 
     },
     {
@@ -264,9 +287,6 @@ const notes = [  // Notities data
         contentBlocks: [
             {
                 content:'Vandaag heb ik gewerkt aan de workshop user interface design. Hier heb ik een wireflow en breakdown schets gemaakt voor een nieuwe functie die met js gebouwd gaat worden. Daarnaast heb ik js lessen gevolgd van learnprogramming.online (ik ben nu bij chapter 3)',
-            },
-            {
-                content: "dit is een link naar <a href='https://www.google.com'>Google</a>' "
             }
         ]
     },
@@ -275,7 +295,7 @@ const notes = [  // Notities data
         title: 'Vandaag gedaan',  
         contentBlocks: [
             {
-                content: 'vandaag heb ik gewerkt aan de ui event deeltaak. Hierin heb ik heb ik met verscxhillende events buttons interactief gemaakt',
+                content: 'vandaag heb ik gewerkt aan de ui event deeltaak. Hierin heb ik heb ik met verschillende events buttons interactief gemaakt',
             },
             {
                 content: 'Van de 10 expirimenten heb ik er 5 kunnen maken. De reden hiervoor is omdat ik erg veel tijd heb gestoken in een counter functie die gelukkig geslaagd is',
@@ -285,7 +305,69 @@ const notes = [  // Notities data
             },
             
         ]
-    }
+    },
+    {
+        date: '6-1-2025',
+        title: 'Vandaag gedaan',  
+        contentBlocks: [
+            {
+                listTitle:"Moet ik nog doen:",
+                listItems: [
+                "testen(1.1.3) wcag test, screenreader keyboard test etc. ",
+                "breakdown schets, lofi/hifi laten zien van",
+                "1.3.3 readme maken"
+            ]
+
+        },
+        {
+            content: "Mijn goede voornemens dit jaar zijn om mezelf meer uit te dagen met js en mijn learning log beter bij te houden. "
+        },
+        { 
+            content: "om langer te blijven bij FDND heb ik betere koffie nodig ;) ( nee grapje ). Ik probeer altijd zo lang mogelijk te blijven"
+        }
+        ]
+    },
+    {
+        date: '10-1-2025',
+        title: 'Code/design review',  
+        contentBlocks: [
+            {
+                content:'vandaag waren er weer code en design review voor de mobile first workshop',
+                listTitle:"Uit de code/design review kwam het volgende:",
+                listItems: [
+                "Kleinere container voor de viewer gebruiken",
+                "labels gebruiken op buttons",
+                'meer classes gebruiken ipv met childs werken voor betere aanpasbaarheid en levensduur van de website'
+            ]
+
+        }
+        ]
+    },
+
+    {
+        date: '22-01-2025',
+        title: 'Vandaag gedaan',
+        contentBlocks: [
+            {
+                content:'Vandaag was de wrap-up voor sprint 6. Hier moesten we onze projecten klaar maken voor de oplevering van morgen',
+            },
+            {
+                content:'Ik heb vandaag de README gemaakt, code klaargezet en gepushed op live omgeving en laatste issues afgemaakt.'
+            }
+        ] 
+    },
+    {
+        date: '24-01-2025',
+        title: 'Vandaag gedaan',
+        contentBlocks: [
+            {
+                content:'Vandaag hebben we de laatste punten op portflow in geleverd en hebben we de expo gehouden met tweede jaars studenten',
+            },
+            {
+                content:'Tijdens de expo zijn twee personen van mijn opdrachtgever nog langs gekomen om nog een keer mijn project en dat van andere studenten te bekijken. Hier heb ik ze doorlopen door mijn website en wat verteld over het werk van andere studenten'
+            }
+        ] 
+    },
 
 
 ];
@@ -300,20 +382,20 @@ notes.forEach(note => {
 
 
 
-//anchor filter ( ik wil geen innerhtml >:( .)
-// Simulate fetching data
-const data = {
-    date: '4-12-2024',
-    title: 'Vandaag gedaan',
-    contentBlocks: [
-        {
-            content: 'Vandaag heb ik gewerkt aan de workshop user interface design. Hier heb ik een wireflow en breakdown schets gemaakt voor een nieuwe functie die met js gebouwd gaat worden. Daarnaast heb ik js lessen gevolgd van learnprogramming.online (ik ben nu bij chapter 3)',
-        },
-        {
-            content: "dit is een link naar <a href='https://www.google.com'>Google</a>"
-        }
-    ]
-};
+// //anchor filter ( ik wil geen innerhtml >:( .)
+// // Simulate fetching data
+// const data = {
+//     date: '4-12-2024',
+//     title: 'Vandaag gedaan',
+//     contentBlocks: [
+//         {
+//             content: 'Vandaag heb ik gewerkt aan de workshop user interface design. Hier heb ik een wireflow en breakdown schets gemaakt voor een nieuwe functie die met js gebouwd gaat worden. Daarnaast heb ik js lessen gevolgd van learnprogramming.online (ik ben nu bij chapter 3)',
+//         },
+//         {
+//             content: "dit is een link naar <a href='https://www.google.com'>Google</a>"
+//         }
+//     ]
+// };
 
 // // Function to render content and convert <a> to actual link elements
 // function renderContentBlocks(contentBlocks) {
