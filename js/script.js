@@ -1,4 +1,4 @@
-function createNoteOfDay(date, title, contentBlocks) {
+function createNoteS1(date, title, contentBlocks) {
     const article = document.createElement("article");
     article.className = "noteofday";
 
@@ -17,7 +17,7 @@ function createNoteOfDay(date, title, contentBlocks) {
         p.innerHTML = block.content;
         article.appendChild(p);
 
-        if (block.listItems && block.listItems.length > 0) {
+        if (block.listItems && block.listItems.length > 0) { //als er een listItem aanwezig is maak een list aan met een title en listcontent
             const h4 = document.createElement("h4");
             h4.textContent = block.listTitle;
             article.appendChild(h4);
@@ -41,16 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetch("./js/notes.json")
         .then(response => {
-            if (!response.ok) {
-                throw new Error("Netwerkrespons was niet oké");
-            }
             return response.json();
         })
         .then(notes => {
             notes.forEach(note => {
-                const noteElement = createNoteOfDay(note.date, note.title, note.contentBlocks);
+                const noteElement = createNoteS1(note.date, note.title, note.contentBlocks);
                 container.appendChild(noteElement);
             });
         })
-        .catch(error => console.error("Fout bij ophalen van notities:", error));
 });
