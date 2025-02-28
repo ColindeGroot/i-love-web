@@ -56,6 +56,7 @@ body {
 h1 {
     font-size: 4em;
     color: #1d1d1b;
+    text-align: center;
 }
 
 .nav-list {
@@ -143,6 +144,19 @@ main {
     flex-flow: column;
     background-color: #eee;
     border-radius: 0.6em;
-    width: 25%;
+    width: 80%;
     padding: 2rem;
+
+   
+
+        code {
+            background-color: #3d3d3d;
+            color: #fff;
+            padding: 1em;
+            margin: 1em 0;
+            display: block;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        
 }
