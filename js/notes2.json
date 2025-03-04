@@ -46,8 +46,8 @@
                 "content": "Vandaag hebben we een reflectie over afeglopen sprint en beschrijven we met illustatraties hoe wij de samenwerking hebben ervaren.",
                 "listTitle": "Vragen voor mezelf",
                 "listItems": [
-                    "Ik kan uitleggen wat NodeJS is en waarvoor het gebruikt wordt: 3 ",
-                    "Ik weet wat het doel van package.json is en heb hier aanpassingen ingemaakt: 2",
+                    "Ik kan uitleggen wat NodeJS is en waarvoor het gebruikt wordt: 2-",
+                    "Ik weet wat het doel van package.json is en heb hier aanpassingen ingemaakt: 2- versie beheer van o.a. dependencies",
                     "Ik heb met npm packages geïnstalleerd en gebruikt in het bestand server.js: 3- Gebruik van express en routes",
                     "Ik kan met commando’s in de terminal een NodeJSproject stoppen en starten: 3- control+C (^c) en npm start etc.",
                     "Ik weet waarom ik mijn NodeJS project regelmatig moet herstarten en kan dit uitleggen: 3- Bij aanpassingen in de server moet je herstarten omdat de aanpassingen niet lokaal zijn moet je de server herstarten",
@@ -66,13 +66,39 @@
                     "Ik kan data fetchen uit een REST API: 2- Ik heb alleen nog wel moeite met de juiste filters gebruiken in de url",
                     "Ik snap het verschil tussen HTTP requests van de methodes GET en POST: 3- GET om op te halen POST om te versturen",
                     "Ik kan data uit een REST API filteren of sorteren: 2- Ik weet welke filters ik kan gebruiken maar vind het soms nog lastig om deze te verwerken in de URL ",
-                    "Ik snap wat het async keyword doet in JavaScript code: 2- met async wat je met uitvoeren van de functie totdat alle data is:  ",
+                    "Ik snap wat het async keyword doet in JavaScript code: 2- met async wat je met uitvoeren van de functie totdat alle data is",
                     "Ik weet wat het doel is van een try/catch block en kan het gebruiken bij het parsen van JSON: 0-",
-                    "Ik begrijp het verschil tussen client-side JavaScript en server-side JavaScript en wanneer ik welke het handigst in kan zetten: 1- Bij client side worden er dingen opgeslagen bij de cleint en niet de server als de client is client-side post is het niet voor andere te zien",
-                    "Ik kan formulierdata die is ge-POSTopslaan ineen variabele op de server en gebruiken bijhet renderenvan een pagina",
-                    "Ik kan formulierdata die is ge-POST door middelvan een POST of PATCHHTTP request opslaan in de REST API"
+                    "Ik begrijp het verschil tussen client-side JavaScript en server-side JavaScript en wanneer ik welke het handigst in kan zetten: 2- Bij client side worden er dingen opgeslagen bij de client en niet de server als de client is client-side post is het niet voor andere te zien",
+                    "Ik kan formulierdata die is ge-POST opslaan in een variabele op de server en gebruiken bij het renderen van een pagina: 1- ",
+                    "Ik kan formulierdata die is ge-POST door middel van een POST of PATCH HTTP request opslaan in de REST API 0-",
+                    "Totaal punten: 49"
                 ]
             }
         ]
+    },
+    {
+        "date": "03-03-2025",
+        "title": "Mediahuis/wearetriple",
+        "contentBlocks": [
+            {
+                "content": "Vandaag hebben we een nieuwe opdrachtgever gekozen. Ik ben hierbij ingepland met Dylan en Clarice"
+            },
+            {
+                "content": "Wij hebben als Opdrachtgever Mediahuis/ triple waar wij een EPG voor gaan maken van de radiostations die beheert worden door mediahuis."
+            }
+        ]
+    },
+    {
+        "date": "04-03-2025",
+        "title": "Opzet mediahuis project",
+        "contentBlocks": [
+            {
+                "content": "Ik heb vandaag de data van de API's gefetched en opgeslagen. Verder heb ik op de homepagina de radiostations weergegeven met liquid en heb ik mijn breakdown schets afgemaakt (moet nog worden toegevoegd)"
+            },
+            {
+                "content": "Ik wil morgen verder met de routes en de opbouw van de homepagina afmaken en issues aanmaken voor een goede planning en duidelijke bewijslast"
+            }
+        ]
     }
+
 ]

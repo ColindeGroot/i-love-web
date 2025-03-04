@@ -7,7 +7,7 @@ function createNoteS1(date, title, contentBlocks) {
 
     const h3 = document.createElement("h3");
     h3.textContent = title;
-
+    
     article.appendChild(h2);
     article.appendChild(h3);
 
@@ -17,7 +17,7 @@ function createNoteS1(date, title, contentBlocks) {
         p.innerHTML = block.content;
         article.appendChild(p);
 
-        if (block.listItems && block.listItems.length > 0) { //als er een listItem aanwezig is maak een list aan met een title en listcontent
+        if (block.listItems && block.listItems.length > 0) {
             const h4 = document.createElement("h4");
             h4.textContent = block.listTitle;
             article.appendChild(h4);
@@ -35,18 +35,32 @@ function createNoteS1(date, title, contentBlocks) {
     return article;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function loadNotes() {
     const container = document.getElementById("container");
     container.className = "layout";
 
-    fetch("./js/notes.json")
-        .then(response => {
-            return response.json();
-        })
+    // Controleer welke pagina is geopend
+    let jsonFile;
+    if (window.location.pathname.includes("semester1.html")) {
+        jsonFile = "./js/notes.json";
+    } else if (window.location.pathname.includes("semester2.html")) {
+        jsonFile = "./js/notes2.json";
+    } else {
+        console.error("Geen bijbehorende notities gevonden voor deze pagina.");
+        return;
+    }
+
+    // Fetch de juiste notities
+    fetch(jsonFile)
+        .then(response => response.json())
         .then(notes => {
             notes.forEach(note => {
                 const noteElement = createNoteS1(note.date, note.title, note.contentBlocks);
                 container.appendChild(noteElement);
             });
         })
-});
+        .catch(error => console.error("Fout bij het laden van de notities:", error));
+}
+
+// Start het script zodra de pagina geladen is
+document.addEventListener("DOMContentLoaded", loadNotes);
