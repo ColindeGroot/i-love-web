@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/ColindeGroot/i-love-web/issues"
   },
-  "homepage": "https://github.com/ColindeGroot/i-love-web#readme"
+  "homepage": "https://github.com/ColindeGroot/i-love-web#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
