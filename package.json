@@ -1,0 +1,27 @@
+{
+  "name": "i-love-web",
+  "version": "2.0.0",
+  "description": "dynamische digital garden",
+  "type": "module",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColindeGroot/i-love-web.git"
+  },
+  "keywords": [
+    "learning",
+    "journal"
+  ],
+  "author": "Colin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ColindeGroot/i-love-web/issues"
+  },
+  "homepage": "https://github.com/ColindeGroot/i-love-web#readme"
+}

@@ -99,6 +99,107 @@
                 "content": "Ik wil morgen verder met de routes en de opbouw van de homepagina afmaken en issues aanmaken voor een goede planning en duidelijke bewijslast"
             }
         ]
-    }
+    },
+    {
+        "date": "06-03-2025",
+        "title": "Workshop Templating met JSON data",
+        "contentBlocks": [
+            {
+                "content": "Tijdens de workshop heb ik de routes klaargezet en data uit Directus in variabelen gezet. <code>app.get('/radio/:name', async function (request, response) { const showsPerDayResponse = await fetch('https://fdnd-agency.directus.app/items/mh_day?fields=date,shows.mh_shows_id.from,shows.mh_shows_id.until,shows.mh_shows_id.show.body,shows.mh_shows_id.show.name,shows.mh_shows_id.show.radiostation.*,shows.mh_shows_id.show.users.mh_users_id.*,shows.mh_shows_id.show.users.*.*'); const showsPerDayResponseJSON = await showsPerDayResponse.json(); response.json(showsPerDayResponseJSON); });</code>"
+            }
+        ]
+    },
+    {
+        "date": "12-03-2025",
+        "title": "Filter notaties in directus",
+        "contentBlocks": [
+            {
+                "listTitle": "expirmenten in directus met filter en sort:",
+                "listItems": [
+                    "Sorteer op naam: https://fdnd.directus.app/items/person?sort=name met sort sorteer je op naam",
+                    "Haal alle mensen op met een D in hun naam: https://fdnd.directus.app/items/person/?fields=name&sort=name&filter={%22name%22:{%22_starts_with%22:%22D%22}} starts_with om naam op te halen die begint met D",
+                    "Mensen met een D of een K: https://fdnd.directus.app/items/person/?fields=name&sort=name&filter={%22_or%22:[{%22name%22:{%22_starts_with%22:%22D%22}},{%22name%22:{%22_starts_with%22:%22K%22}}]} met de or logical operator"
+                ],
+                "content": "Om meer te leren kan ik gebruik maken van <a href='https://directus.io/docs/guides/connect/filter-rules'>Directus filter rules<a/>"
+            }
+        ]
+    },
+    {
+        "date": "14-3-2025",
+        "title": "Redesign studio, en retrospect",
+        "contentBlocks": [
+            {
+                "content": "Vandaag hebben we een retrospect en worden we gevraagd hoe wij het lokaal kunnen redesignen zodat leerlingen langer willen blijven",
+                "listTitle": "Dit gaat goed:",
+                "listItems": [
+                    "Docenten en andere leerlingen zijn bijna altijd beschikbaar voor vragen",
+                    "Door de groepjes is de sfeer erg gezellig"
+                ]
+            },
+            {
+                "content": "Vandaag hebben we een retrospect en worden we gevraagd hoe wij het lokaal kunnen redesignen zodat leerlingen langer willen blijven",
+                "listTitle": "Dit gaat minder goed:",
+                "listItems": [
+                    "Omdat het zo vol/krap is kan het lastig zijn om te concentreren",
+                    "Het aquarium is vaak koud en is erg leeg/ sfeerloos waardoor het niet fijn werkt"
+                ]
+            }
+        ]
+    },
+    {
+        "date": "17-3-2025",
+        "contentBlocks": [
+            {
+                "content": "Vandaag een workshop over Progresive enhanchments",
+                "listTitle": "Progressive enhanchment bestaat uit 3 stappen:",
+                "listItems": [
+                    "Bepaal de core functionaliteit",
+                    "Bouw op de simpelste techniek mogelijk",
+                    "Voeg enhanchments toe"
+                ]
+            },
+            {
+                "content": "Ik ben tegen een knelpunt aangekomen met de database. Ik wil namelijk een likefunctie maken maar deze likes moeten opgeslagen worden in de database.Omdat er nog geen data aanwezig is voor de likes moet deze toegevoegd worden in de database"
+            }
+        ]
+    },
+    {
+        "date": "4-4-2025",
+        "title": "Vragenlijst",
+        "contentBlocks": [
+            {
+                "content": "Vandaag hebben we een reflectie over afeglopen sprint en beschrijven we met illustatraties hoe wij de samenwerking hebben ervaren.",
+                "listTitle": "Vragen voor mezelf",
+                "listItems": [
+                    "1 Ik kan uitleggen wat NodeJS is en waarvoor het gebruikt wordt: 3-  je gebruikt node voor het instaleren van o.a. packages hiermij krijg je toegang tot ",
+                    "2 Ik weet wat het doel van package.json is en heb hier aanpassingen ingemaakt: 3- ik snap hoe ik packages kan toevoegen en beheren met de package.json <code>'dependencies': {'express': '^5.0.1','liquidjs': '^10.21.0'}</code>",
+                    "3 Ik heb met npm packages geïnstalleerd en gebruikt in het bestand server.js: 3- Gebruik van express en routes (npm install)",
+                    "4 Ik kan met commando’s in de terminal een NodeJS project stoppen en starten: 3- control+C (^c) en npm start etc.",
+                    "5 Ik weet waarom ik mijn NodeJS project regelmatig moet herstarten en kan dit uitleggen: 3- Bij aanpassingen in de server moet je herstarten omdat de aanpassingen niet lokaal zijn",
+                    "6 Ik heb een strategie voor debuggen in NodeJS: 2- console.log om te kijken of data binnenkomt en try catch voor simpelle error handling <code>catch (error){console.log(error)}</code>",
+                    "7 Ik kan uitleggen wat Express.js doet en waarom het nodig is om met NodeJS een website te bouwen: 2- Express word gebruikt voor server side code en kan met routes goed gebruikt worden voor templating. Nodejs is hiervoor nodig omdat het een node package is",
+                    "8 Ik weet wat routes zijn en kan zelf een nieuwe route aanmaken: 3- met een get haal je route op en met post verstuur je data (post heeft ook andere methods die je kan gebruiken zoals DELETE) <code>app.post('/radio/:stationName/show/:id/like', async (req, res) => {</code>",
+                    "9 Ik weet wat request en response argumenten zijn in een functie voor het laden van data: 2- request kan je gebruiken als je iets in de route wil doorgeven zoals een id van een opgehaalde item uit de database en deze mee wilt geven en met reponse kan je een reactie terug krijgen zoals een render functie ",
+                    "10 Ik heb gebruik gemaakt van een request parameter om specifieke data te laden: 2- voor de message functie heb ik een request in de http gebruikt om de berichten van de juiste persoon op te halen <code>req.params.data</code>",
+                    "11 Ik kan uitleggen wat Liquid doet en waarom het nodig is om met Express.js een website te maken:2- liquid is dynamisch en heeft express nodig om de data op te kunnen halen van de server",
+                    "12 Ik weet hoe ik data naar Liquid verstuur om dit te gebruiken bij het renderen van een pagina: 3- met een render geef ik properties door die ik wil inladen met liquid",
+                    "13 Ik weet hoe ik Liquid filters toe kan passen en waar ik kan vinden hoe die werken: 2- liquid heeft een docs met filters. Ik heb filters zoals truncate en strip gebruikt",
+                    "14 Ik heb een nieuwe route gemaakt en nieuwe data meegegeven aan een Liquid view: 3- Ik heb meerde nieuwe pagina's gemaakt en daar data aan meegeven viqa de render functie",
+                    "15 Ik weet waar een foreach loop voor gebruikt wordt en pas het toe in een Liquid view om HTML te renderen:3- ik heb een for loop gebruikt om voor elk radio station een daar een item voor aan te maken ",
 
+                    "16 Ik kan in Liquid een controle maken waarmee de avatar niet getoond wordt als deze niet in whois.fdnd.nl is ingevuld:3- Dit heb ik gedaan op mijn eigen squadpage: <code>{% if person.avatar != blank %}</code>",
+                    "17 Ik heb een strategie voor debuggen in Liquid: 1- je kan normale script gebruiken met een log maar liquid bied ook een comments functie aan (niet gebruikt)",
+                    "18 Ik kan data fetchen uit een REST API: 2- Ik heb alleen nog wel moeite met de juiste filters gebruiken in de url",
+                    "19 Ik snap het verschil tussen HTTP requests van de methodes GET en POST: 3- GET om op te halen POST om te versturen",
+                    "20 Ik kan data uit een REST API filteren of sorteren: 2- Ik weet welke filters ik kan gebruiken maar vind het soms nog lastig om deze te verwerken in de URL ",
+                    "21 Ik snap wat het async keyword doet in JavaScript code: 2- met async wat je met uitvoeren van de functie totdat alle data is",
+                    "22 Ik weet wat het doel is van een try/catch block en kan het gebruiken bij het parsen van JSON: 0-",
+                    "23 Ik begrijp het verschil tussen client-side JavaScript en server-side JavaScript en wanneer ik welke het handigst in kan zetten: 2- Bij client side worden er dingen opgeslagen bij de client en niet de server als de client is client-side post is het niet voor andere te zien",
+                    "24 Ik kan formulierdata die is ge-POST opslaan in een variabele op de server en gebruiken bij het renderen van een pagina: 2- like functie",
+                    "25 Ik kan formulierdata die is ge-POST door middel van een POST of PATCH HTTP request opslaan in de REST API 0-",
+                    "Totaal punten: 49"
+                ]
+            }
+        ]
+    }
 ]
