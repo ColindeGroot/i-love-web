@@ -1,0 +1,45 @@
+{% render 'partials/head.liquid' %}
+
+<body>
+
+    {% render 'partials/nav.liquid' %}
+
+    <section class="intro">
+        <h1>I Love Web</h1>
+        <h3>Van Colin de Groot</h3>
+    </section>
+
+    <main class="content">
+        <h2>Semester</h2>
+        <div class="slide-container">
+                <h2>Journal:</h2>
+                {% for file in files %}
+                <a href="/journal/{{file}}">{{file| slice: 0,-5 }}</a>
+                {% endfor %}
+
+            {% comment %} <article class="semesters">
+                <h2 class="article-head">01</h2>
+                <p class="article-body">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam cupiditate obcaecati aspernatur
+                    hic nostrum at sapiente culpa voluptatem est vitae nihil, quasi incidunt labore aperiam repellendus
+                    corrupti et assumenda reiciendis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit,
+                    asperiores. Consequuntur vitae perspiciatis esse magni saepe quaerat eligendi et, odio modi
+                    voluptate voluptatibus placeat id ducimus sed aliquam! Eaque, adipisci?
+                    <br>
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae similique dolor, excepturi
+                    deserunt aut est accusamus hic, provident, nemo fuga. Temporibus facere accusamus officiis
+                    repellendus! Dolore nulla eius dicta.
+                </p>
+                <a class="article-link" href="/views/semester1.html">Link naar pagina</a>
+            </article> {% endcomment %}
+
+
+
+
+        </div>
+    </main>
+
+</body>
+
+</html>

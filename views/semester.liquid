@@ -1,0 +1,26 @@
+{% for entry in data %}
+  <article>
+    <header>
+      <h3>{{ entry.date }}</h3>
+      <p>{{ entry.title }}</p>
+    </header>
+    
+    {% for block in entry.contentBlocks %}
+      <div class="content-block">
+        <p>{{ block.content }}</p>
+
+        {% if block.listTitle %}
+          <h4>{{ block.listTitle }}</h4>
+        {% endif %}
+
+        {% if block.listItems %}
+          <ul>
+            {% for item in block.listItems %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </article>
+{% endfor %}

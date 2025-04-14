@@ -1,19 +1,47 @@
-import express from 'express'
+import express from "express";
+import { Liquid } from "liquidjs";
+import { readdir, readFile } from "node:fs/promises";
 
-// Maak een nieuwe Express applicatie aan, waarin we de server configureren
-const app = express()
+const app = express();
 
-// Gebruik de map 'public' voor statische bestanden (resources zoals CSS, JavaScript, afbeeldingen en fonts)
-// Bestanden in deze map kunnen dus door de browser gebruikt worden
-app.use(express.static('public'))
+const engine = new Liquid();
+app.engine("liquid", engine.express());
+app.set("views", "./views");
 
-// Zorg dat werken met request data makkelijker wordt
-app.use(express.urlencoded({extended: true}))
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
-app.set('port', process.env.PORT || 8000)
+// Lees alle bestanden in de 'content'-map (die je JSON-bestanden bevat)
+const files = await readdir("content");
+console.log("Beschikbare bestanden in content:", files);
 
-// Start Express op, haal daarbij het zojuist ingestelde poortnummer op
-app.listen(app.get('port'), function () {
-  // Toon een bericht in de console en geef het poortnummer door
-  console.log(`Application started on http://localhost:${app.get('port')}`)
-})
+app.get("/", async function (req, res) {
+  res.render("index.liquid", { files });
+});
+
+// Route voor een specifiek journal-bestand via de URL-parameter :slug
+app.get("/journal/:slug", async function (req, res) {
+  const filePath = "content/" + req.params.slug;
+  try {
+    const fileContents = await readFile(filePath, { encoding: "utf8" });
+    console.log("File contents:", fileContents);
+
+    // Parse het JSON-bestand
+    const parsedContent = JSON.parse(fileContents);
+    console.log("Parsed JSON:", parsedContent);
+
+    // Render de Liquid template en geef de data mee
+    res.render("semester.liquid", { data: parsedContent });
+  } 
+  
+  catch (error) {
+    console.error(error);
+    res.status(500).send("niet gevonden.");
+  }
+});
+
+// Stel de poort in en start de server
+app.set("port", process.env.PORT || 2004);
+app.listen(app.get("port"), function () {
+  console.log(`Application started on http://localhost:${app.get("port")}`);
+});
