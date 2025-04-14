@@ -1,26 +1,39 @@
-{% for entry in data %}
-  <article>
-    <header>
-      <h3>{{ entry.date }}</h3>
-      <p>{{ entry.title }}</p>
-    </header>
-    
-    {% for block in entry.contentBlocks %}
-      <div class="content-block">
-        <p>{{ block.content }}</p>
+{% render 'partials/head.liquid'%}
 
-        {% if block.listTitle %}
-          <h4>{{ block.listTitle }}</h4>
-        {% endif %}
+<section class="intro">
+        <h1>Learning journal {{ semester.slug | slice: 0,-5 }} </h1>
+        <p>Hier vind je een overzicht van de dingen die ik heb geleerd in dit semester. </p>
+</section>
 
-        {% if block.listItems %}
-          <ul>
-            {% for item in block.listItems %}
-              <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
-    {% endfor %}
-  </article>
-{% endfor %}
+
+<section class="layout">
+  {% for entry in data %}
+
+    <article class="noteofday">
+        <h3>{{ entry.date }}</h3>
+        <p>{{ entry.title }}</p>
+      {% for block in entry.contentBlocks %}
+
+        <div >
+          <p>{{ block.content }}</p>
+
+          {% if block.listTitle %}
+            <h4>{{ block.listTitle }}</h4>
+          {% endif %}
+  
+          {% if block.listItems %}
+            <ul>
+              {% for item in block.listItems %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+        </div>
+
+      {% endfor %}
+    </article>
+
+  {% endfor %}
+</section>
+

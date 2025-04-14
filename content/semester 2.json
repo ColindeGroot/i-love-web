@@ -120,7 +120,7 @@
                     "Haal alle mensen op met een D in hun naam: https://fdnd.directus.app/items/person/?fields=name&sort=name&filter={%22name%22:{%22_starts_with%22:%22D%22}} starts_with om naam op te halen die begint met D",
                     "Mensen met een D of een K: https://fdnd.directus.app/items/person/?fields=name&sort=name&filter={%22_or%22:[{%22name%22:{%22_starts_with%22:%22D%22}},{%22name%22:{%22_starts_with%22:%22K%22}}]} met de or logical operator"
                 ],
-                "content": "Om meer te leren kan ik gebruik maken van <a href='https://directus.io/docs/guides/connect/filter-rules'>Directus filter rules<a/>"
+                "content": "Om meer te leren kan ik gebruik maken van <a href='https://directus.io/docs/guides/connect/filter-rules'>Directus filter rules</a>"
             }
         ]
     },

@@ -24,14 +24,21 @@ app.get("/journal/:slug", async function (req, res) {
   const filePath = "content/" + req.params.slug;
   try {
     const fileContents = await readFile(filePath, { encoding: "utf8" });
-    console.log("File contents:", fileContents);
+    // console.log("File contents:", fileContents);
 
     // Parse het JSON-bestand
     const parsedContent = JSON.parse(fileContents);
     console.log("Parsed JSON:", parsedContent);
 
     // Render de Liquid template en geef de data mee
-    res.render("semester.liquid", { data: parsedContent });
+    res.render("semester.liquid", 
+      { 
+        data: parsedContent,
+        semester: {
+          slug: req.params.slug
+        }
+      }
+    );
   } 
   
   catch (error) {
