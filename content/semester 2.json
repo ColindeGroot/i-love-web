@@ -200,5 +200,60 @@
                 ]
             }
         ]
+    },
+    {
+        "date": "9-5-2025",
+        "title": "vragenlijst sprint 10",
+        "contentBlocks": [
+            {
+                "content": "Vandaag weer een vragenlijst :/",
+                "listTitle": "Vragen",
+                "listItems": [
+                    "Ik begrijp het verschil tussen client-side JavaScript en server-side JavaScript en wanneer ik welke het handigst in kan zetten: 3",
+                    "Ik heb een strategie voor server-side JavaScript debuggen, voor client-side JavaScript debuggen, en voor Liquid code debuggen 2- met console.logs en errors catchen kan ik zien of data binnenkomt en deze goed word omgezet. liquid debuggen is bijna niet nodig geweest dus hier heb ik geen gebruik van gemaakt",
+                    "Ik kan GET en POST routes aanmaken en request parameters gebruiken: 3 met gebruik van <code>app.post('/', async (req, res)</code> met de res en req laad in de pagina in met een render",
+                    "Ik kan server-side JSON data fetchen uit een REST API: 3- met een fetch funtie weet ik hoe ik data moet ophalen. ik heb zelfs met params request gewerkt als filter in mijn url: <code>const likesForShows = await fetch(`https://fdnd-agency.directus.app/items/mh_messages?filter=${filter}`);</code>",
+                    "Ik kan data uit een REST API filteren of sorteren: 2- zoals aangetoont heb ik gebruik gemaakt van filters in mijn url (?filter=)",
+                    "Ik snap wat het async keyword doet in JavaScript code: 2- async zorgt ervoor dat de functie pas word uitgevoerd wanneer de data binnen is",
+                    "Ik weet wat het doel is van een try/catch block en kan het gebruiken bij het parsen van JSON: 2- met een try catch vraag je de server om iets proberen te fetchen met de catch kan je bijvoorbeeld een error handling aan toeveogen voor als het catchen niet werkt",
+                    "Ik kan met een client-side fetch een werkend formulier verrijken: 1- met de prevent default heb ik ervoor gezorgd dat de state van het formulier automatisch update maar ik heb me hier niet verder in kunnen verdiepen",
+                    "Ik kan multi-page en single-page view transitions inzetten en aanpassen: 1- alleen nog toegekomen aan multipage transistion waarin ik gebruik maak van view-transisition groups <code> @view-transition {navigation: auto;} ::view-transition-group(.title) {animation-duration: 0.2s;} }</code>",
+                    "Ik kan verschillende manieren van responsive images uitleggen en toepassen: 2- door de foto's een standaard grootte te geven heb je geen last van cls",
+                    "Ik weet hoe ik de resultaten van een performance audit moet interpreteren en hoe ik performance problemen kan oplossen: 2- bij onderdelenbnen zoals cls kan je duidelijk zien waar zich een shift plaatst vind door vaste waardes mee te geven aan content dat nog moet inladen voorkom je dat ze een layout shift veroorzaken",
+                    "Ik weet hoe ik met client-side JS de UX kan verbeteren, rekening houdend met progressive enhancement",
+                    "Ik weet hoe ik binnen HTML, CSS en client-side JS nieuwe technieken toe kan passen, rekening houdend met oudere browsers: 2- met feauture detection contoleer je of browsers bepaalde functies ondersteunen. Zo niet dan maak je een fallback. Voorbeeld in css: <code>@supports selector(:target) {}</code>",
+                    "Ik weet wat objecten, arrays, strings, loops, variabelen, functies en parameters zijn, en kan die in JavaScript inzetten: ik weet de verschillen en hoe deze kan toepassen en omzetten. Zo parse ik strings naar json, zet je objecten om met stringify en gebruik ik loops in mijn liquid voor het inladen van mijn shows. <code>body: JSON.stringify({}), {% for item in weekDays %}</code>",
+                    "Ik weet wat geavanceerdere concepten in JavaScript zijn, zoals closures, promises, callbacks, scope en de event loop: 1- ik weet wat de eventloop en promisses doen maar heb ze nog niet vaak toegepast buiten de server om",
+                    "Ik kan via GitHub met feature branches werken, pull requests aanmaken, reviewen en mergen: 2- ik heb eerder gewerkt met branches en pull request voor gezamelijke projecten",
+                    "Ik weet hoe ik formulieren pro-actief kan valideren met client-side code: 0-",
+                    "Ik weet de eerste regel van ARIA, en wat dat betekent voor hoe ik HTML schrijf: 3- niet gebruiken als het met HTML kan. Vaak bied HTML al oplossingen die je anders met ARIA doet",
+                    "Ik weet wat layout shifts zijn, door wat ze veroorzaakt worden, hoe ik ze kan meten en hoe ik ze kan oplossen: 2- doordat content geen vaste plek heeft voordat het word ingeladen kan content verschuiven wanneer het verschijnt. Met devtools kan je dit meten en vaak ook zien waar het plaats vind",
+                    "Ik weet wat de Core Web Vitals zijn, hoe ik die kan meten, en hoe ik de cijfers moet interpreteren: 3- Vitals worden ingedeeld onder groepen waarmee de gebruikerservaring op websites gemeten wordt. Deze statistieken zijn: Largest Contentful Paint Interaction to Next Paint Cumulative Layout Shift.",
+                    "Ik weet hoe perceived performance invloed heeft op de beleving van een gebruiker, en ik heb de ontwerp- en code vaardigheden om die toe te passen",
+                    "Ik kan UI states in meerdere lagen van progressive enhancement inzetten om de UX te verbeteren. Met een succes en erorr state geef ik gebruikers feedback van de status. Dit doe ik door een ander formulier te tonen als er geliked is<code>{% if likes contains showId %} <andereform></code>",
+                    "Ik kan een UI leuker en prettiger maken, zonder de core functionaliteit uit het oog te verliezen 1- moet nog animaties toevoegen",
+                    "Ik weet hoe ik verschillende vormen van feature detection in kan zetten in HTML, in CSS en in client-side JS 2-"
+                ]
+            }
+        ]
+    },
+    {
+        "date": "23-5-2025",
+        "title": "We love web kalok yeung",
+        "contentBlocks": [
+            {
+                "content": "Vandaag hebben we een lezing gekregen van Kelok yeung over emotinal interface. Hier legt hij uit hoe je emoties stimuleert bij gebruikers van je website.",
+                "listTitle": "Besproken onderdelen:",
+                "listItems": [
+                    "Soft UI: Afgeronde hoeken, witruimtes en een rustige layout geeft de gebruiker rust.",
+                    "Motion: Moet iets bijdragen en niet als decoratie. Onnodige motion is storend voor de gebruiker",
+                    "Geluid: Word vaak gezien als hindernis maar kan bij juist gebruik branding toevoegen.",
+                    "Content: Verscxhillende manieren van content overbrengen via bijvoorbeeld een conversational interface (leuk om naar te kijken)"
+                ]
+            },
+            {
+                "content": "Verder de tip gekregen om niet alles te prototypen in figma en om te kijken hoe je componenten kan hergebruiken op een creatieve manier."
+            }
+        ]
     }
 ]

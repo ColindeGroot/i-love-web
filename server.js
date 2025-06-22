@@ -16,7 +16,13 @@ const files = await readdir("content");
 console.log("Beschikbare bestanden in content:", files);
 
 app.get("/", async function (req, res) {
-  res.render("index.liquid", { files });
+
+  res.render("index.liquid", { 
+    files,
+    semester: {
+      slug: req.params.slug
+    }
+  });
 });
 
 // Route voor een specifiek journal-bestand via de URL-parameter :slug
