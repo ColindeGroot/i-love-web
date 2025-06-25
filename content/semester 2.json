@@ -255,5 +255,42 @@
                 "content": "Verder de tip gekregen om niet alles te prototypen in figma en om te kijken hoe je componenten kan hergebruiken op een creatieve manier."
             }
         ]
-    }
+    },
+    {
+        "date": "02-06-2025",
+        "title": "Proof of concept - INFO",
+        "contentBlocks": [
+            {
+                "content": "Vandaag briefing gehad met nieuwe opdrachtgever: INFO. Ik heb van info de opdracht gekregen om komende 3 weken te werken aan een dashbard van Jan Ingenhousz Institution (JII). Op dit dashbaord komen resulateten van experimenten te staan van photosynteshe voor betere groei van planten. In deze 3 weken bouw ik een dashbaord met een post en delete mogelijk en de optie om experimenten te kunnen viewen en de data van de IoT devices in te laden bij het project. "
+            }
+        ]
+    } ,
+    {
+        "date": "05-06-2025",
+        "title": "JII - reliable laag",
+        "contentBlocks": [
+            {
+                "content": "Vandaag begonnen met de one-column layout en alle data ingeladen van de endpoints.. Met routes alvast doorgelinkt naar projecten. Ik ga morgen een post functie maken om te testen of ik experimenten kan toevoegen"
+            }
+        ]
+    },
+    {
+        "date": "06-06-2025",
+        "title": "JII - reliable laag",
+        "contentBlocks": [
+            {
+                "content": "Post functie gemaakt maar er ontbreken dingen die niet in de docuementatie staat. Om een uniek id mee te geven maak ik gebruik van een UUID zodat post niet hetzelfde id kunnen hebben. Dit heb ik als package toegevoegd samen met de huidige datum:<code> 'id:' uuidv4(),</code> zie meer op de <a href=https://www.npmjs.com/package/uuid>docs van npm</a>"
+            }
+        ]
+    },
+    {
+        "date": "10-06-2025",
+        "title": "JII - micro interacties ",
+        "contentBlocks": [
+            {
+                "content": "Begonnen met mijn eerste micro interactie waarbij de delete knop van animatie veranderd als je eroverheen hovert. Andere buttons ook van animatie voorzien en op de detailpagina alle projecten doorgelinked. Eerste versie online gezet op render"
+            }
+        ]
+    }  
+
 ]
