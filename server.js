@@ -36,6 +36,8 @@ app.get("/journal/:slug", async function (req, res) {
     const parsedContent = JSON.parse(fileContents);
     console.log("Parsed JSON:", parsedContent);
 
+    
+
     // Render de Liquid template en geef de data mee
     res.render("semester.liquid", 
       { 
