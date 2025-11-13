@@ -2,27 +2,42 @@
 
 <body>
 
-    {% render 'partials/nav.liquid' %}
+  {% render 'partials/nav.liquid' %}
 
-    <section class="intro">
-        <h1>I Love Web</h1>
-        <h3>Van Colin de Groot</h3>
-    </section>
+  <section class="intro">
+    <h1>I Love Web</h1>
+    <h3>Van Colin de Groot</h3>
+  </section>
 
-    <main class="content">
-        <h2>Journal</h2>
+  <h2>Mijn GitHub Repositories</h2>
+  <ul>
+    {% for repo in repos %}
+    <li>
+      <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+      <p>{{ repo.description }}</p>
+      <small>Laatste update: {{ repo.updated_at }}</small>
+    </li>
+    {% else %}
+    <li>Geen repositories gevonden.</li>
+    {% endfor %}
+  </ul>
 
-        <div class="slide-container">
-                {% for file in files %}
-                    <article class="semesters">
-                        <h2 class="article-head">{{ semester.slug }} </h2>
-                        <p class="article-body">info volgt nog...</p>
-                        <a href="/journal/{{file}}">{{file| slice: 0,-5 }}</a>
-                    </article>
-                {% endfor %}
-        </div>
 
-    </main>
+
+  <main class="content">
+    <h2>Journal</h2>
+
+    <div class="slide-container">
+      {% for file in files %}
+      <article class="semesters">
+        <h2 class="article-head">{{ semester.slug }} </h2>
+        <p class="article-body">info volgt nog...</p>
+        <a href="/journal/{{file}}">{{file| slice: 0,-5 }}</a>
+      </article>
+      {% endfor %}
+    </div>
+
+  </main>
 
 </body>
 

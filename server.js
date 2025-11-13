@@ -11,18 +11,25 @@ app.set("views", "./views");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-// Lees alle bestanden in de 'content'-map (die je JSON-bestanden bevat)
 const files = await readdir("content");
 console.log("Beschikbare bestanden in content:", files);
 
 app.get("/", async function (req, res) {
 
-  res.render("index.liquid", { 
-    files,
-    semester: {
-      slug: req.params.slug
-    }
-  });
+  const githubUsername = "ColindeGroot";
+  const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
+  const repos = await response.json();
+  
+  console.log(repos);
+
+  repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+  res.render("index.liquid", {
+  repos,
+  files,
+  semester: { slug: req.params.slug || "" }
+});
+
 });
 
 // Route voor een specifiek journal-bestand via de URL-parameter :slug
@@ -36,20 +43,14 @@ app.get("/journal/:slug", async function (req, res) {
     const parsedContent = JSON.parse(fileContents);
     console.log("Parsed JSON:", parsedContent);
 
-    
-
     // Render de Liquid template en geef de data mee
-    res.render("semester.liquid", 
-      { 
-        data: parsedContent,
-        semester: {
-          slug: req.params.slug
-        }
-      }
-    );
-  } 
-  
-  catch (error) {
+    res.render("semester.liquid", {
+      data: parsedContent,
+      semester: {
+        slug: req.params.slug,
+      },
+    });
+  } catch (error) {
     console.error(error);
     res.status(500).send("niet gevonden.");
   }

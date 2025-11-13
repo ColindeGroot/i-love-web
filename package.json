@@ -29,7 +29,8 @@
   "dependencies": {
     "express": "^5.1.0",
     "liquidjs": "^10.21.0",
-    "marked": "^15.0.7",
+    "marked": "^15.0.12",
+    "node-html-parser": "^7.0.1",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
