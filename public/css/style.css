@@ -85,6 +85,53 @@ main {
     margin: auto;
 }
 
+.git-repos{
+    width: 90%;
+    overflow: auto;
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+.git-repos::-webkit-scrollbar {
+    display: none;
+}
+
+.git-repos::scroll-button(left){
+    content: '<';
+    border: none;
+    background-color: #3EE577;
+    font-size: 3rem;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.git-repos::scroll-button(right){
+    content: '>';
+    border: none;
+    background-color: #3EE577;
+    font-size: 3rem;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.repo{
+    flex: 0 0 20em;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    transition: all 0.3s linear;
+
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+
 /* Slide Container */
 .slide-container {
     width: 100%;

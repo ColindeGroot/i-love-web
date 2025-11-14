@@ -6,20 +6,24 @@
 
   <section class="intro">
     <h1>I Love Web</h1>
-    <h3>Van Colin de Groot</h3>
+    <h3>Colin de Groot</h3>
   </section>
 
-  <h2>Mijn GitHub Repositories</h2>
-  <ul>
-    {% for repo in repos %}
-    <li>
-      <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
-      <p>{{ repo.description }}</p>
-      <small>Laatste update: {{ repo.updated_at }}</small>
+  <h2>GitHub Repositories</h2>
+
+  <ul class="git-repos">
+    {% for repo in repos limit:10 %}
+
+    <li class="repo">
+      <a class="repo-link" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+      <p class="repo-description">{{ repo.description }}</p>
+      <small class="reo-updated"> Last updated: <time datetime="{{ repo.updated_at }}">{{ repo.updated_at }}</time></small>
     </li>
+
     {% else %}
-    <li>Geen repositories gevonden.</li>
+    <li>No Repos found!</li>
     {% endfor %}
+
   </ul>
 
 
