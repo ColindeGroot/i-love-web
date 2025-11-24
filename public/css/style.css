@@ -154,14 +154,27 @@ main {
   anchor-name: --repocarousel;
   scroll-snap-type: x mandatory;
   scroll-marker-group: after;
+  padding-block: 2rem;
+
+  &:has(.repo:hover) {
+    .repo:not(:hover) .inner {
+      translate: -0.5rem 0;
+    }
+  }
 }
 
-.git-repos::scroll-marker-group {
+/* .git-repos::scroll-marker-group {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 2rem;
-}
+  background-color: #111112;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+} */
+
 
 .git-repos::-webkit-scrollbar {
   display: none;
@@ -200,16 +213,19 @@ main {
 } */
 
 .repo {
-
   scroll-snap-align: start;
   flex: 0 0 30em;
-  border-left: #111112 1px solid;
-  border-right: #111112 1px solid;
   padding: 1rem;
-  transition: all 0.3s linear;
 
-  &:hover {
-    transform: scale(0.95);
+  .inner {
+    padding: 0 2em;
+    transition: transform 0.3s ease-out, translate 0.3s ease-out;
+    border-left: #111112 1px solid;
+    border-right: #111112 1px solid;
+  }
+
+  &:hover .inner {
+    transform: scale(1.05);
   }
 
   .repo::scroll-marker {

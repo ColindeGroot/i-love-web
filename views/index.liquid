@@ -31,11 +31,14 @@
           {% if repo.description %}
 
           <li class="repo">
-            <h3>{{ repo.name }}</h3>
-            <p class="repo-description">{{ repo.description }}</p>
-            <a class="repo-link" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
-            <small class="repo-updated"> Last updated: <time
-                datetime="{{ repo.updated_at }}">{{repo.updated_at}}</time></small>
+            <div class="inner">
+              <h3>{{ repo.name }}</h3>
+              <p class="repo-description">{{ repo.description }}</p>
+              <a class="repo-link" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+              <small class="repo-updated"> Last updated: <time
+                  datetime="{{ repo.updated_at }}">{{repo.updated_at}}</time></small>
+
+            </div>
           </li>
 
           {% endif %}
