@@ -4,38 +4,59 @@
 
   {% render 'partials/nav.liquid' %}
 
-  <section class="intro">
+  {% comment %} <section class="intro">
     <h1>I Love Web</h1>
     <h3>Colin de Groot</h3>
+  </section> {% endcomment %}
+
+  <section class="about">
+    <img src="" alt="">
+    <h2></h2>
   </section>
 
-  <h2>GitHub Repositories</h2>
-
-  <ul class="git-repos">
-    {% for repo in repos limit:10 %}
-
-    <li class="repo">
-      <a class="repo-link" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
-      <p class="repo-description">{{ repo.description }}</p>
-      <small class="reo-updated"> Last updated: <time datetime="{{ repo.updated_at }}">{{ repo.updated_at }}</time></small>
-    </li>
-
-    {% else %}
-    <li>No Repos found!</li>
-    {% endfor %}
-
-  </ul>
-
-
-
   <main class="content">
+
+    <section class="showcase">
+
+      <div class="showcase-about">
+        <h2>Some work of mine:</h2>
+        <p>I have made several projects in my years as a student. Some of them being small scale projects and others
+          being large projects for real customers</p>
+      </div>
+
+      <div class="git-showcase">
+        <ul class="git-repos">
+
+          {% for repo in repos limit:10 %}
+          {% if repo.description %}
+
+          <li class="repo">
+            <h3>{{ repo.name }}</h3>
+            <p class="repo-description">{{ repo.description }}</p>
+            <a class="repo-link" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+            <small class="repo-updated"> Last updated: <time
+                datetime="{{ repo.updated_at }}">{{repo.updated_at}}</time></small>
+          </li>
+
+          {% endif %}
+          {% else %}
+
+          <li>No Repos found!</li>
+          {% endfor %}
+
+        </ul>
+      </div>
+    </section>
+
+
     <h2>Journal</h2>
 
     <div class="slide-container">
       {% for file in files %}
       <article class="semesters">
         <h2 class="article-head">{{ semester.slug }} </h2>
-        <p class="article-body">info volgt nog...</p>
+        <p class="article-body">The current avaible data in my journal is local. This website is being reworked with
+          11ty to display my markdown files which contain al my experiments. Check back soon for more! </p>
         <a href="/journal/{{file}}">{{file| slice: 0,-5 }}</a>
       </article>
       {% endfor %}

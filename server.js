@@ -20,7 +20,7 @@ app.get("/", async function (req, res) {
   const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
   const repos = await response.json();
   
-  console.log(repos);
+  console.log(repos[0]);
 
   repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
@@ -55,6 +55,10 @@ app.get("/journal/:slug", async function (req, res) {
     res.status(500).send("niet gevonden.");
   }
 });
+
+app.get("/experiment/:slug", async function(res,req) {
+  
+})
 
 // Stel de poort in en start de server
 app.set("port", process.env.PORT || 2004);
