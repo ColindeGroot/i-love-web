@@ -4,10 +4,10 @@
 
   {% render 'partials/nav.liquid' %}
 
-  {% comment %} <section class="intro">
+ <section class="intro">
     <h1>I Love Web</h1>
     <h3>Colin de Groot</h3>
-  </section> {% endcomment %}
+  </section>
 
   <section class="about">
     <img src="" alt="">
@@ -34,10 +34,8 @@
             <div class="inner">
               <h3>{{ repo.name }}</h3>
               <p class="repo-description">{{ repo.description }}</p>
+              <small class="repo-updated"> Last updated: <time datetime="{{ repo.updated_at }}">{{repo.updated_at}}</time></small>
               <a class="repo-link" href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
-              <small class="repo-updated"> Last updated: <time
-                  datetime="{{ repo.updated_at }}">{{repo.updated_at}}</time></small>
-
             </div>
           </li>
 
@@ -49,6 +47,8 @@
 
         </ul>
       </div>
+
+      <a class="btn" href="https://github.com/ColindeGroot">See more projects</a>
     </section>
 
 

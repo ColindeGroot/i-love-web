@@ -94,6 +94,10 @@ h1 {
   text-align: center;
 }
 
+.btn,
+button {
+}
+
 .nav-list {
   padding: 0;
   list-style: none;
@@ -175,13 +179,11 @@ main {
 
 } */
 
-
 .git-repos::-webkit-scrollbar {
   display: none;
 }
 
-.git-repos::scroll-button(left),
-.git-repos::scroll-button(right) {
+.git-repos::scroll-button(*) {
   content: "<";
   border: none;
   background-color: #111112;
@@ -207,10 +209,18 @@ main {
   position-area: right center;
 }
 
-/* .git-repos::scroll-button(*):disabled{
-    opacity: 0.6;
-    cursor:auto;
-} */
+.git-repos::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: auto;
+}
+
+.git-repos::scroll-button(block-start) {
+  display: none;
+}
+
+.git-repos::scroll-button(block-end) {
+  display: none;
+}
 
 .repo {
   scroll-snap-align: start;
@@ -218,6 +228,8 @@ main {
   padding: 1rem;
 
   .inner {
+    display: grid;
+    grid-template-columns: subgrid;
     padding: 0 2em;
     transition: transform 0.3s ease-out, translate 0.3s ease-out;
     border-left: #111112 1px solid;
